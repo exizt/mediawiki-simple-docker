@@ -6,5 +6,9 @@ Thumbs.db
 *.log
 .env
 
+# logs dir
+*.log
+!/logs/
+
 # other files
 /LocalSettings.php
