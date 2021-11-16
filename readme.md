@@ -1,5 +1,5 @@
 # 개요
-간단하게 Docker compose를 통해 미디어위키를 셋팅해보는 프로젝트입니다. 
+간단하게 Docker compose를 통해 개인 미디어위키(=비공개 미디어위키)를 빠르게 셋팅해보는 프로젝트입니다. 
 
 `미디어위키 1.35.4`로 테스트를 했으며, VisualEditor도 동작합니다. 
 
@@ -22,6 +22,7 @@
     ```
 
 <br><br><br>
+
 ## 참고 사항
 도커 이미지 생성 과정에서 처리되는 것
 * php, apache 설치
@@ -39,21 +40,34 @@
 
 # 접속 방법
 
-http://localhost:30189/
+http://localhost:30189/w/
+
 
 처음 접속시, 인스톨 과정을 진행함
+* `http://localhost:30189/w/` 접속
+* 설정을 따라 진행을 해보고, 다음다음을 눌러간다.
+    - 데이터베이스 호스트 : `db`
+    - 데이터베이스 이름 : `wiki`
+    - 데이터베이스 사용자 이름 : `wiki`
+    - 캐싱 설정 : `PHP 개체 캐싱 (APC, APCu 또는 WinCache)` 선택
 * 데이터베이스에 테이블을 생성하고, `LocalSettings.php`를 만드는 과정을 진행합니다.
+
 
 다음으로 할 일
 1. 다운받은 `LocalSettings.php`를 적절히 수정해주었다면, 여기 폴더로 복사.
     - 미리 넣어둔 `LocalSettings.sample.php`을 복사해서 `LocalSettings.php`로 수정하셔도 됩니다. (권장)
     - 직접 `LocalSettings.php`를 작성하셨다면, `LocalSettings.sample.php`와 비교해서 없는 부분은 추가하시기 바랍니다. (parsiod 설정 등)
+2. `LocalSettings.sample.php`을 이용시 입력해야 하는 항목
+    - `$wgDBpassword` : 데이터베이스 암호
+    - `$wgSecretKey` : 키
+    - `$wgUpgradeKey` : 키
 2. 도커 컨테이너에 터미널 접근한 후 (도커 데스크탑에서는 쉽게 접속 가능, 그 외에는 명령어로 접속해야...)
 3. `setup-mediawiki.sh` 실행
 
 ```
 /app/src/setup-mediawiki.sh
 ```
+4. `http://localhost:30189` 접속
 
 <br><br><br>
 
