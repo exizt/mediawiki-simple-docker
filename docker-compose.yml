@@ -1,0 +1,30 @@
+# 개발 환경을 위한 Dockerfile. (프로덕션용이 아님)
+version: "3.9"
+services: 
+  web:
+    build:
+      context: .
+    ports:
+      - "${APP_PORT_EXTERNAL}:${APP_PORT}"
+    volumes:
+      - .:/app/src
+      - ./vhost.conf:/etc/apache2/sites-available/000-default.conf
+      - ./logs:/var/log/apache2
+    entrypoint: /bin/bash /app/docker-entrypoint.sh
+    depends_on:
+      - db
+  db:
+    image: mariadb:10.6
+    environment: 
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    ports:
+      - ${DB_PORT_EXTERNAL}:${DB_PORT}
+    volumes:
+      - maindb:/var/lib/mysql
+      - ./scripts:/app/scripts
+volumes:
+  maindb:

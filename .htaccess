@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	Options -Indexes
+
+	# 파일이 아닌 경우
+	RewriteCond %{REQUEST_FILENAME} !-f
+	# 폴더가 아닌 경우
+	RewriteCond %{REQUEST_FILENAME} !-d
+
+	# wiki redirect
+	RewriteRule ^/?wiki(/.*)?$ %{DOCUMENT_ROOT}/w/index.php [L]
+
+	RewriteRule ^/*$ %{DOCUMENT_ROOT}/w/index.php [L]
+</IfModule>
