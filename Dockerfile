@@ -8,6 +8,7 @@ WORKDIR /app
 # - git, unzip : composer 에서 필요
 # - imagemagick : 미디어위키에서 섬네일할 때 필요
 # - php-apcu : apcu 캐싱 (데이터베이스 결과 캐싱)
+# - libicu-dev : intl을 위해 필요한 듯.
 RUN  apt-get update \
     && apt-get install -y \
     wget \
@@ -16,17 +17,13 @@ RUN  apt-get update \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/*
 
-# intl
-# RUN docker-php-ext-configure intl && docker-php-ext-install intl
-# RUN pecl install intl-3.0.0 && docker-php-ext-enable intl
-
 # apcu
 RUN pecl install apcu-5.1.21 && docker-php-ext-enable apcu
 
 # php extension 설치
 RUN docker-php-ext-install bcmath mysqli
-# RUN docker-php-ext-enable apcu
-# RUN docker-php-ext-install intl
+
+# intl
 RUN docker-php-ext-configure intl && docker-php-ext-install intl && docker-php-ext-enable intl
 
 # apache enable mode

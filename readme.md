@@ -10,7 +10,7 @@
 <br><br><br>
 
 # 도커 셋팅
-1. `.sample.env`를 복사해 `.env`파일을 생성하고 다음의 내용을 입력합니다.
+1. `.example.env`를 복사해 `.env`파일을 생성하고 다음의 내용을 입력합니다.
     - DB_PASSWORD
     - DB_ROOT_PASSWORD
 2. `.env`의 PORT 설정은 임의로 넣어놓은 것인데... 적절히 겹치지 않게 넣어두었습니다. 변경하시게 되면, LocalSettings.php 에서도 변경할 필요가 있습니다. 
@@ -55,9 +55,9 @@ http://localhost:30189/w/
 
 다음으로 할 일
 1. 다운받은 `LocalSettings.php`를 적절히 수정해주었다면, 여기 폴더로 복사.
-    - 미리 넣어둔 `LocalSettings.sample.php`을 복사해서 `LocalSettings.php`로 수정하셔도 됩니다. (권장)
-    - 직접 `LocalSettings.php`를 작성하셨다면, `LocalSettings.sample.php`와 비교해서 없는 부분은 추가하시기 바랍니다. (parsiod 설정 등)
-2. `LocalSettings.sample.php`을 이용시 입력해야 하는 항목
+    - 미리 넣어둔 `LocalSettings.example.php`을 복사해서 `LocalSettings.php`로 수정하셔도 됩니다. (권장)
+    - 직접 `LocalSettings.php`를 작성하셨다면, `LocalSettings.example.php`와 비교해서 없는 부분은 추가하시기 바랍니다. (parsiod 설정 등)
+2. `LocalSettings.example.php`을 이용시 입력해야 하는 항목
     - `$wgDBpassword` : 데이터베이스 암호
     - `$wgSecretKey` : 키
     - `$wgUpgradeKey` : 키
