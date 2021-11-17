@@ -83,7 +83,7 @@ $wgUseInstantCommons = false;
 # Periodically send a pingback to https://www.mediawiki.org/ with basic data
 # about this MediaWiki instance. The Wikimedia Foundation shares this data
 # with MediaWiki developers to help guide future development efforts.
-$wgPingback = true;
+$wgPingback = false;
 
 ## If you use ImageMagick (or any other shell command) on a
 ## Linux server, this will need to be set to the name of an
@@ -171,6 +171,8 @@ wfLoadExtension( 'TitleBlacklist' );
 wfLoadExtension( 'VisualEditor' );
 wfLoadExtension( 'WikiEditor' );
 
+# End of automatically generated settings.
+# Add more configuration options below.
 
 # parsoid 관련 설정으로 추가한 부분.
 wfLoadExtension( 'Parsoid', 'vendor/wikimedia/parsoid/extension.json' );
