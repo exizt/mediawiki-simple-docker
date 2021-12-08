@@ -61,12 +61,10 @@ http://localhost:30189/w/
     - `$wgDBpassword` : 데이터베이스 암호
     - `$wgSecretKey` : 키
     - `$wgUpgradeKey` : 키
-2. 도커 컨테이너에 터미널 접근한 후 (도커 데스크탑에서는 쉽게 접속 가능, 그 외에는 명령어로 접속해야...)
 3. `setup-mediawiki.sh` 실행
-
-```
-/app/src/setup-mediawiki.sh
-```
+    ```
+    docker-compose exec web /bin/bash /app/src/setup-mediawiki.sh
+    ```
 4. `http://localhost:30189` 접속
 
 <br><br><br>

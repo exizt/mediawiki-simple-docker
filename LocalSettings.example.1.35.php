@@ -51,11 +51,11 @@ $wgEnotifWatchlist = false; # UPO
 $wgEmailAuthentication = false;
 
 ## Database settings
-$wgDBtype = "mysql";
-$wgDBserver = "db";
-$wgDBname = "wiki";
-$wgDBuser = "wiki";
-$wgDBpassword = "";
+$wgDBtype = 'mysql';
+$wgDBserver = 'db';
+$wgDBname = 'wiki';
+$wgDBuser = 'wiki';
+$wgDBpassword = '';
 
 # MySQL specific settings
 $wgDBprefix = "";
