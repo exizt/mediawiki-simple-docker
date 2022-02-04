@@ -21,6 +21,10 @@
     docker-compose up --build --force-recreate -d
     ```
 
+## 컨테이너 중지
+```
+docker-compose stop
+```
 <br><br><br>
 
 ## 참고 사항
