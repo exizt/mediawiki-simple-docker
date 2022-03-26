@@ -14,18 +14,10 @@
     - DB_PASSWORD
     - DB_ROOT_PASSWORD
 2. `.env`의 PORT 설정은 임의로 넣어놓은 것인데... 적절히 겹치지 않게 넣어두었습니다. 변경하시게 되면, LocalSettings.php 에서도 변경할 필요가 있습니다. 
-
-
 3. docker 이미지 생성 및 compose 실행
     ```
     docker-compose up --build --force-recreate -d
     ```
-
-## 컨테이너 중지
-```
-docker-compose stop
-```
-<br><br><br>
 
 ## 참고 사항
 도커 이미지 생성 과정에서 처리되는 것
@@ -65,17 +57,6 @@ http://localhost:30189/w/
     - `$wgDBpassword` : 데이터베이스 암호
     - `$wgSecretKey` : 키
     - `$wgUpgradeKey` : 키
-3. `setup-mediawiki.sh` 실행
-    ```
-    docker-compose exec web /bin/bash /app/src/setup-mediawiki.sh
-    ```
-4. `http://localhost:30189` 접속
+3. `http://localhost:30189` 접속
 
 <br><br><br>
-
-
-## 참고 사항
-`setup-mediawiki.sh`의 내용
-* `LocalSettings.php`를 미디어위키 폴더로 복사.
-* `.htaccess`를 미디어위키 폴더로 복사.
-

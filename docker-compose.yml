@@ -10,6 +10,8 @@ services:
       - .:/app/src
       - ./vhost.conf:/etc/apache2/sites-available/000-default.conf
       - ./logs:/var/log/apache2
+      - ./public/.htaccess:/app/public/.htaccess
+      - ./config:/app/config
     entrypoint: /bin/bash /app/docker-entrypoint.sh
     depends_on:
       - db

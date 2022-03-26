@@ -11,5 +11,5 @@ Thumbs.db
 !/logs/
 
 # other files
-/LocalSettings.php
+LocalSettings.php
 /scripts/*.sql
