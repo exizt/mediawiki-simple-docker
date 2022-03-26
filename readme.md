@@ -58,5 +58,3 @@ http://localhost:30189/w/
     - `$wgSecretKey` : 키
     - `$wgUpgradeKey` : 키
 3. `http://localhost:30189` 접속
-
-<br><br><br>
