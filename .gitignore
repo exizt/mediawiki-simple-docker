@@ -1,15 +1,9 @@
-# General
+# OS files
 .DS_Store
 Thumbs.db
 
-# files
-*.log
+# project files
 .env
-
-# logs dir
-*.log
-!/logs/
-
-# other files
 LocalSettings.php
-/scripts/*.sql
+/config/LocalSettings.php
+/logs
