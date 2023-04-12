@@ -7,16 +7,16 @@ if ! [ -d /app ]; then
 fi
 
 
-if ! [ -d /app/public/w ]; then
+if ! [ -d /app/src/mediawiki/extensions ]; then
 	cd /app/src
 	# 미디어위키 인스톨 실행
 	bash install-mediawiki.sh
 fi
 
 # 설정파일이 존재할 경우에 심볼릭 생성
-if [ -f /app/config/LocalSettings.php ]; then
-	if ! [ -f /app/public/w/LocalSettings.php ]; then
-		ln -s /app/config/LocalSettings.php /app/public/w/LocalSettings.php
+if [ -f /app/src/config/LocalSettings.php ]; then
+	if ! [ -f /app/src/mediawiki/LocalSettings.php ]; then
+		ln -s ../config/LocalSettings.php /app/src/mediawiki/LocalSettings.php
 	fi
 fi
 
