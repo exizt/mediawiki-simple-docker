@@ -1,5 +1,5 @@
 # 개발 환경을 위한 Dockerfile. (프로덕션용이 아님)
-FROM php:7.4-apache-bullseye
+FROM php:8.2-apache-bullseye
 
 WORKDIR /app
 

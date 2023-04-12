@@ -12,11 +12,13 @@ services:
       - ./logs:/var/log/apache2
       - ./public/.htaccess:/app/public/.htaccess
       - ./config:/app/config
+      # - ./mediawiki:/app/public/w
     entrypoint: /bin/bash /app/docker-entrypoint.sh
     depends_on:
       - db
   db:
-    image: mariadb:10.9.3
+    # mariadb LTS 버전 10.6 (2026-07), 10.11 (2028-02)
+    image: mariadb:10.11
     environment: 
       - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
       - MYSQL_DATABASE=${DB_DATABASE}

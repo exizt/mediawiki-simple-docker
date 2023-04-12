@@ -4,6 +4,8 @@ Thumbs.db
 
 # project files
 .env
-LocalSettings.php
-/config/LocalSettings.php
-/logs
+
+# dir
+**/
+!/public
+!/config/.dummy
