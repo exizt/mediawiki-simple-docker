@@ -23,8 +23,8 @@ fi
 cd /app
 
 # db 서버를 기다리기
-echo "wait db server"
-dockerize -wait tcp://db:3306 -timeout 20s
+# echo "wait db server"
+# dockerize -wait tcp://db:3306 -timeout 20s
 
 # 서버 실행
 echo "Apache server is running..."

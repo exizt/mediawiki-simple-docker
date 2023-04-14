@@ -9,8 +9,7 @@ WORKDIR /app
 # - imagemagick : 미디어위키에서 섬네일할 때 필요
 # - php-apcu : apcu 캐싱 (데이터베이스 결과 캐싱)
 # - libicu-dev : intl을 위해 필요한 듯.
-RUN  apt-get update \
-    && apt-get install -y \
+RUN  apt-get update && apt-get install -y \
     wget \
     imagemagick \
     libicu-dev \
@@ -30,10 +29,10 @@ RUN docker-php-ext-configure intl && docker-php-ext-install intl && docker-php-e
 RUN a2enmod rewrite headers
 
 # DB 연결에 대기시킬 수 있는 기능을 하는 Dockerize 를 이용
-ENV DOCKERIZE_VERSION v0.6.1
-RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
-    && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
-    && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
+# ENV DOCKERIZE_VERSION v0.6.1
+# RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+#    && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+#    && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
 
 
 # Set the ENV vars
